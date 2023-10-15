@@ -56,9 +56,10 @@
 					:no-wrap="true"
 					input-id="openai-model-select"
 					@input="onModelSelected" />
+				<!-- TaunShu Comment: 2023.10.15 reguirement 3 -->
 				<a v-if="state.url === ''"
 					:title="t('integration_openai', 'More information about OpenAI models')"
-					href="https://beta.openai.com/docs/models"
+					href="https://prj.ces.myfiinet.com"
 					target="_blank">
 					<NcButton type="tertiary">
 						<template #icon>
@@ -112,22 +113,22 @@
 </template>
 
 <script>
-import InformationOutlineIcon from 'vue-material-design-icons/InformationOutline.vue'
 import EarthIcon from 'vue-material-design-icons/Earth.vue'
-import KeyIcon from 'vue-material-design-icons/Key.vue'
 import HelpCircleIcon from 'vue-material-design-icons/HelpCircle.vue'
+import InformationOutlineIcon from 'vue-material-design-icons/InformationOutline.vue'
+import KeyIcon from 'vue-material-design-icons/Key.vue'
 
 import OpenAiIcon from './icons/OpenAiIcon.vue'
 
 import NcButton from '@nextcloud/vue/dist/Components/NcButton.js'
-import NcSelect from '@nextcloud/vue/dist/Components/NcSelect.js'
 import NcCheckboxRadioSwitch from '@nextcloud/vue/dist/Components/NcCheckboxRadioSwitch.js'
+import NcSelect from '@nextcloud/vue/dist/Components/NcSelect.js'
 
+import axios from '@nextcloud/axios'
+import { showError, showSuccess } from '@nextcloud/dialogs'
 import { loadState } from '@nextcloud/initial-state'
 import { generateUrl } from '@nextcloud/router'
-import axios from '@nextcloud/axios'
 import { delay } from '../utils.js'
-import { showSuccess, showError } from '@nextcloud/dialogs'
 
 export default {
 	name: 'AdminSettings',

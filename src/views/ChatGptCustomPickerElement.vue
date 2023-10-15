@@ -4,11 +4,12 @@
 			<h2>
 				{{ t('integration_openai', 'ChatGPT-like text generation') }}
 			</h2>
-			<a class="attribution"
+			<!-- TaunShu Comment: 2023.10.15 reguirement 1 -->
+			<!-- <a class="attribution"
 				target="_blank"
 				href="https://openai.com">
 				{{ poweredByTitle }}
-			</a>
+			</a> -->
 			<div class="input-wrapper">
 				<NcTextField
 					ref="chatgpt-search-input"
@@ -95,12 +96,13 @@
 						max="10"
 						step="1">
 				</div>
-				<div class="line">
+				<!-- TaunShu Comment: 2023.10.15 reguirement 2,3,4 -->
+				<!-- <div class="line">
 					<label for="openai-completion-model-select">
 						{{ t('integration_openai', 'Model to use') }}
 					</label>
 					<a :title="t('integration_openai', 'More information about OpenAI models')"
-						href="https://beta.openai.com/docs/models"
+						href="https://prj.ces.myfiinet.com"
 						target="_blank">
 						<NcButton type="tertiary"
 							:aria-label="t('integration_openai', 'More information about OpenAI models')">
@@ -115,8 +117,8 @@
 						class="model-select"
 						:options="formattedModels"
 						input-id="openai-completion-model-select" />
-				</div>
-				<div class="line">
+				</div> -->
+				<!-- <div class="line">
 					<label for="max-tokens">
 						{{ t('integration_openai', 'Approximate maximum number of words to generate (tokens)') }}
 					</label>
@@ -128,31 +130,31 @@
 						min="10"
 						max="100000"
 						step="1">
-				</div>
+				</div> -->
 			</div>
 		</div>
 	</div>
 </template>
 
 <script>
-import EyeIcon from 'vue-material-design-icons/Eye.vue'
-import RefreshIcon from 'vue-material-design-icons/Refresh.vue'
 import ArrowRightIcon from 'vue-material-design-icons/ArrowRight.vue'
-import ChevronRightIcon from 'vue-material-design-icons/ChevronRight.vue'
 import ChevronDownIcon from 'vue-material-design-icons/ChevronDown.vue'
+import ChevronRightIcon from 'vue-material-design-icons/ChevronRight.vue'
+import EyeIcon from 'vue-material-design-icons/Eye.vue'
 import HelpCircleIcon from 'vue-material-design-icons/HelpCircle.vue'
+import RefreshIcon from 'vue-material-design-icons/Refresh.vue'
 
 import NcButton from '@nextcloud/vue/dist/Components/NcButton.js'
-import NcLoadingIcon from '@nextcloud/vue/dist/Components/NcLoadingIcon.js'
-import NcTextField from '@nextcloud/vue/dist/Components/NcTextField.js'
-import NcSelect from '@nextcloud/vue/dist/Components/NcSelect.js'
 import NcCheckboxRadioSwitch from '@nextcloud/vue/dist/Components/NcCheckboxRadioSwitch.js'
-import NcUserBubble from '@nextcloud/vue/dist/Components/NcUserBubble.js'
+import NcLoadingIcon from '@nextcloud/vue/dist/Components/NcLoadingIcon.js'
 import NcRichContenteditable from '@nextcloud/vue/dist/Components/NcRichContenteditable.js'
+import NcSelect from '@nextcloud/vue/dist/Components/NcSelect.js'
+import NcTextField from '@nextcloud/vue/dist/Components/NcTextField.js'
+import NcUserBubble from '@nextcloud/vue/dist/Components/NcUserBubble.js'
 
 import axios from '@nextcloud/axios'
-import { generateUrl } from '@nextcloud/router'
 import { showError } from '@nextcloud/dialogs'
+import { generateUrl } from '@nextcloud/router'
 
 export default {
 	name: 'ChatGptCustomPickerElement',
