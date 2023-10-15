@@ -4,11 +4,12 @@
 			<h2>
 				{{ t('integration_openai', 'AI image generation') }}
 			</h2>
-			<a class="attribution"
+			<!-- TaunShu Comment: 2023.10.15 reguirement 5 -->
+			<!-- <a class="attribution"
 				target="_blank"
 				href="https://openai.com/dall-e-2/">
 				{{ poweredByTitle }}
-			</a>
+			</a> -->
 			<div class="input-wrapper">
 				<NcTextField
 					ref="dalle-search-input"
@@ -105,23 +106,23 @@
 </template>
 
 <script>
+import ArrowRightIcon from 'vue-material-design-icons/ArrowRight.vue'
+import ChevronDownIcon from 'vue-material-design-icons/ChevronDown.vue'
+import ChevronRightIcon from 'vue-material-design-icons/ChevronRight.vue'
 import EyeIcon from 'vue-material-design-icons/Eye.vue'
 import RefreshIcon from 'vue-material-design-icons/Refresh.vue'
-import ArrowRightIcon from 'vue-material-design-icons/ArrowRight.vue'
-import ChevronRightIcon from 'vue-material-design-icons/ChevronRight.vue'
-import ChevronDownIcon from 'vue-material-design-icons/ChevronDown.vue'
 
 import NcButton from '@nextcloud/vue/dist/Components/NcButton.js'
 import NcLoadingIcon from '@nextcloud/vue/dist/Components/NcLoadingIcon.js'
-import NcTextField from '@nextcloud/vue/dist/Components/NcTextField.js'
 import NcSelect from '@nextcloud/vue/dist/Components/NcSelect.js'
+import NcTextField from '@nextcloud/vue/dist/Components/NcTextField.js'
 import NcUserBubble from '@nextcloud/vue/dist/Components/NcUserBubble.js'
 
 import ImageReferenceWidget from './ImageReferenceWidget.vue'
 
 import axios from '@nextcloud/axios'
-import { generateUrl, generateOcsUrl } from '@nextcloud/router'
 import { showError } from '@nextcloud/dialogs'
+import { generateOcsUrl, generateUrl } from '@nextcloud/router'
 
 export default {
 	name: 'ImageCustomPickerElement',
