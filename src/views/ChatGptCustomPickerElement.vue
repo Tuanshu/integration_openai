@@ -4,7 +4,7 @@
 			<h2>
 				{{ t('integration_openai', 'ChatGPT-like text generation') }}
 			</h2>
-			<!-- TaunShu Comment: 2023.10.15 reguirement 1 -->
+			<!-- TuanShu Comment: 2023.10.15 reguirement 1 -->
 			<!-- <a class="attribution"
 				target="_blank"
 				href="https://openai.com">
@@ -96,7 +96,7 @@
 						max="10"
 						step="1">
 				</div>
-				<!-- TaunShu Comment: 2023.10.15 reguirement 2,3,4 -->
+				<!-- TuanShu Comment: 2023.10.15 reguirement 2,3,4 -->
 				<!-- <div class="line">
 					<label for="openai-completion-model-select">
 						{{ t('integration_openai', 'Model to use') }}

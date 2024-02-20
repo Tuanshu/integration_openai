@@ -56,7 +56,7 @@
 					:no-wrap="true"
 					input-id="openai-model-select"
 					@input="onModelSelected" />
-				<!-- TaunShu Comment: 2023.10.15 reguirement 3 -->
+				<!-- TuanShu Comment: 2023.10.15 reguirement 3 -->
 				<a v-if="state.url === ''"
 					:title="t('integration_openai', 'More information about OpenAI models')"
 					href="https://prj.ces.myfiinet.com"

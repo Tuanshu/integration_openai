@@ -4,7 +4,7 @@
 			<h2>
 				{{ t('integration_openai', 'AI image generation') }}
 			</h2>
-			<!-- TaunShu Comment: 2023.10.15 reguirement 5 -->
+			<!-- TuanShu Comment: 2023.10.15 reguirement 5 -->
 			<!-- <a class="attribution"
 				target="_blank"
 				href="https://openai.com/dall-e-2/">
